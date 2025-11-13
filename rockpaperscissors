@@ -1,0 +1,27 @@
+import random
+userpoints=0
+computerpoints=0
+while True:
+    user=input("Enter your choice (rock/paper/scissors): ")
+    options=["rock","paper","scissors"]
+    computer=random.choice(options)
+    print(f"Computer chose: {computer}")
+    if user==computer:
+        print("It is a tie!")
+    elif(user=="rock" and computer=="scissors" or user=="paper" and computer=="rock" or user=="scissors" and computer=="paper"):
+        userpoints+=1
+    else:
+        computerpoints+=1
+    print(f"Score -> You: {userpoints}, Computer: {computerpoints}")
+    choice=input("Do you want to continue? (yes/no): ")
+    if choice.lower()=="no":
+        if(userpoints<computerpoints):
+            print("computer wins")
+        elif(userpoints>computerpoints):
+            print("user wins")
+        else:
+            print("It's a tie overall!")
+        break
+    else:
+        continue
+
